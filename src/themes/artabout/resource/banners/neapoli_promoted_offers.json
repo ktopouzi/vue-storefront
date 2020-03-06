@@ -1,0 +1,18 @@
+{
+  "mainBanners": [
+	  {
+	    "title": "",
+	    "subtitle": "",
+	    "image": "/assets/main-left.jpg",
+	    "link": "/sandwich/-6"
+    },
+    {
+	    "title": "",
+	    "subtitle": "",
+	    "image": "/assets/main-right.jpg",
+	    "link": "/burger-club/burger-club-5"
+	  }
+  ],
+  "smallBanners": [],
+  "productBanners": []
+}
