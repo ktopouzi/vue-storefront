@@ -34,6 +34,9 @@
 import i18n from '@vue-storefront/i18n'
 import Breadcrumbs from 'theme/components/core/Breadcrumbs'
 import StaticExample from 'theme/components/theme/blocks/Static/Example'
+import TermOfUse from '../components/theme/blocks/Static/TermOfUse'
+import Privacy from '../components/theme/blocks/Static/Privacy'
+import Shops from '../components/theme/blocks/Static/Shops'
 import StaticShortExample from 'theme/components/theme/blocks/Static/Short'
 import { getPathForStaticPage } from 'theme/helpers'
 import { localizedRoute } from '@vue-storefront/core/lib/multistore'
@@ -67,13 +70,15 @@ export default {
   data () {
     return {
       navigation: [
-        { title: i18n.t('About us'), link: getPathForStaticPage('/about-us'), component: StaticExample },
-        { title: i18n.t('Customer service'), link: getPathForStaticPage('/customer-service'), component: StaticShortExample },
-        { title: i18n.t('Store locator'), link: localizedRoute('/store-locator'), component: StaticExample },
-        { title: i18n.t('Delivery'), link: '/delivery', component: StaticShortExample },
-        { title: i18n.t('Return policy'), link: '/returns', component: StaticExample },
-        { title: i18n.t('Privacy policy'), link: '/privacy', component: StaticShortExample },
-        { title: i18n.t('Size guide'), link: '/size-guide', component: StaticExample },
+        // { title: i18n.t('About us'), link: getPathForStaticPage('/about-us'), component: StaticExample },
+        { title: 'Όροι Χρήσης', link: localizedRoute('/terms-of-use'), component: TermOfUse },
+        { title: 'Πολιτική Απορρήτου', link: localizedRoute('/privacy'), component: Privacy },
+        { title: 'Καταστήματα', link: localizedRoute('/shops'), component: Shops },
+        // { title: i18n.t('Store locator'), link: localizedRoute('/store-locator'), component: StaticExample },
+        // { title: i18n.t('Delivery'), link: '/delivery', component: StaticShortExample },
+        // { title: i18n.t('Return policy'), link: '/returns', component: StaticExample },
+        // { title: i18n.t('Privacy policy'), link: '/privacy', component: StaticShortExample },
+        // { title: i18n.t('Size guide'), link: '/size-guide', component: StaticExample },
         { title: i18n.t('Contact us'), link: '/contact', component: StaticShortExample }
       ]
     }
@@ -115,14 +120,5 @@ $border-primary: color(primary, $colors-border);
 </style>
 
 <style lang="scss">
-.static-content {
-  h3 {
-    margin-top: 40px;
-    margin-bottom: 25px;
-    @media (max-width: 767px) {
-      margin-top: 35px;
-      margin-bottom: 10px;
-    }
-  }
-}
+
 </style>

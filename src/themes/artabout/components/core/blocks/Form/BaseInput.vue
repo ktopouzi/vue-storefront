@@ -3,7 +3,7 @@
     <div class="relative">
       <input
         class="
-         py10 w-100 border-box brdr-none brdr-bottom-1
+         w-100 border-box brdr-none brdr-bottom-1
          brdr-cl-primary h4 sans-serif
        "
         :class="{pr30: type === 'password', empty: value === ''}"
@@ -18,7 +18,7 @@
         @keyup.enter="$emit('keyup.enter', $event.target.value)"
         @keyup="$emit('keyup', $event)"
       >
-      <label>{{ placeholder }}</label>
+      <label class="cl-black">{{ placeholder }}</label>
     </div>
     <button
       v-if="iconActive"
@@ -139,7 +139,7 @@ export default {
     &:hover,
     &:focus {
       outline: none;
-      border-color: $color-puerto-rico;
+      border-color: $color-black;
     }
 
     &:disabled,
@@ -163,7 +163,7 @@ export default {
   input:focus ~ label, input:not(.empty) ~ label{
     top: -10px;
     font-size:14px;
-    color:$color-puerto-rico;
+    color: $color-black;
   }
 
   .icon {

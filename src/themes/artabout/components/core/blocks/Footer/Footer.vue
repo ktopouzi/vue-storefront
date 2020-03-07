@@ -16,27 +16,32 @@
           >
             <div class="start-md">
               <h3 class="cl-white weight-400">
-                {{ $t("ΠΑΡΑΓΓΕΛΙΕΣ") }}
+                ΠΑΡΑΓΓΕΛΙΕΣ
               </h3>
               <div class="mt15">
                 <router-link class="cl-white" :to="'/my-account'" exact>
-                  {{ $t("Ο λογαριασμός μου") }}
+                  Ο λογαριασμός μου
                 </router-link>
               </div>
               <div class="mt15">
                 <router-link class="cl-white" :to="'/terms-of-use'" exact>
-                  {{ $t("Όροι Χρήσης") }}
+                  Όροι Χρήσης
+                </router-link>
+              </div>
+              <div class="mt15">
+                <router-link class="cl-white" :to="'/shops'" exact>
+                  Καταστήματα
                 </router-link>
               </div>
               <div class="mt15">
                 <router-link class="cl-white" :to="'/privacy'" exact>
-                  {{ $t("Πολιτική Απορρήτου") }}
+                  Πολιτική Απορρήτου
                 </router-link>
               </div>
             </div>
             <div class="start-md">
               <h3 class="cl-white weight-400">
-                {{ $t("ΚΑΤΑΣΤΗΜΑΤΑ") }}
+                ΚΑΤΑΣΤΗΜΑΤΑ
               </h3>
               <div class="mt15">
                 <h3 class="cl-white mb0">
@@ -105,7 +110,7 @@
               <p class="cl-white mt15">
                 Για να μην χάνετε ούτε μία προσφορά!
               </p>
-              <div class="flex center middle">
+              <div class="flex start-xs mt20">
                 <a
                   class="social-icon mx10 brdr-circle no-underline"
                   href="https://www.facebook.com/"
@@ -250,8 +255,8 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-@import "~theme/css/variables/colors";
-@import "~theme/css/helpers/functions/color";
+@import '~theme/css/variables/colors';
+@import '~theme/css/helpers/functions/color';
 $color-secondary: color(secondary);
 $color-red: #d9251b;
 

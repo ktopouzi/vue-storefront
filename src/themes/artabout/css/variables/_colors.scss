@@ -20,7 +20,8 @@ $colors: (
   forest-green: #308c14,
   puerto-rico: #4dba87,
   mine-shaft: #333,
-  xred: #d9251b
+  xred: #d9251b,
+  xgray: #777
 );
 
 // Theme generic colors
@@ -33,11 +34,11 @@ $colors-theme: (
   ),
   secondary: (
     default: map-get($colors, gray),
-    hover: map-get($colors, matterhorn),
+    hover: map-get($colors, matterhorn)
   ),
   accent: (
     default: map-get($colors, matterhorn),
-    hover: map-get($colors, black),
+    hover: map-get($colors, black)
   ),
   tertiary: map-get($colors, silver),
   success: map-get($colors, puerto-rico),
@@ -47,7 +48,7 @@ $colors-theme: (
 
 $colors-border: (
   primary: map-get($colors, silver),
-  secondary: map-get($colors, gainsboro),
+  secondary: map-get($colors, gainsboro)
 );
 
 $colors-background: (

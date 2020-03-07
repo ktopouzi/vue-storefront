@@ -1,17 +1,19 @@
 <template>
   <div>
-    <header class="modal-header py25 px65 h1 serif weight-700 bg-cl-secondary">
+    <header
+      class="modal-header py25 px65 h1 serif weight-700 bg-cl-black cl-white"
+    >
       {{ $t('Register') }}
       <i
         slot="close"
-        class="modal-close material-icons cl-bg-tertiary"
+        class="modal-close material-icons cl-white"
         @click="close"
       >
         close
       </i>
     </header>
 
-    <div class="modal-content bg-cl-primary pt30 pb60 px65 cl-secondary">
+    <div class="modal-content bg-cl-primary pt30 pb60 px65 cl-black">
       <form @submit.prevent="register" novalidate>
         <base-input
           class="mb10"
@@ -61,10 +63,12 @@
             v-model="lastName"
             @blur="$v.lastName.$touch()"
             :placeholder="$t('Last name *')"
-            :validations="[{
-              condition: !$v.lastName.required && $v.lastName.$error,
-              text: $t('Field is required.')
-            }]"
+            :validations="[
+              {
+                condition: !$v.lastName.required && $v.lastName.$error,
+                text: $t('Field is required.')
+              }
+            ]"
           />
         </div>
         <base-input
@@ -112,10 +116,12 @@
           v-model="conditions"
           @blur="$v.conditions.$reset()"
           @change="$v.conditions.$touch()"
-          :validations="[{
-            condition: !$v.conditions.required && $v.conditions.$error,
-            text: $t('You must accept the terms and conditions.')
-          }]"
+          :validations="[
+            {
+              condition: !$v.conditions.required && $v.conditions.$error,
+              text: $t('You must accept the terms and conditions.')
+            }
+          ]"
         >
           {{ $t('I accept terms and conditions') }} *
         </base-checkbox>
@@ -135,11 +141,11 @@
   </div>
 </template>
 <script>
-import Register from '@vue-storefront/core/compatibility/components/blocks/Auth/Register'
-import ButtonFull from 'theme/components/theme/ButtonFull.vue'
-import BaseCheckbox from 'theme/components/core/blocks/Form/BaseCheckbox.vue'
-import BaseInput from 'theme/components/core/blocks/Form/BaseInput.vue'
-import { required, email, minLength, sameAs } from 'vuelidate/lib/validators'
+import Register from '@vue-storefront/core/compatibility/components/blocks/Auth/Register';
+import ButtonFull from 'theme/components/theme/ButtonFull.vue';
+import BaseCheckbox from 'theme/components/core/blocks/Form/BaseCheckbox.vue';
+import BaseInput from 'theme/components/core/blocks/Form/BaseInput.vue';
+import { required, email, minLength, sameAs } from 'vuelidate/lib/validators';
 
 export default {
   validations: {
@@ -175,47 +181,47 @@ export default {
   methods: {
     register () {
       if (this.$v.$invalid) {
-        this.$v.$touch()
+        this.$v.$touch();
         this.$store.dispatch('notification/spawnNotification', {
           type: 'error',
           message: this.$t('Please fix the validation errors'),
           action1: { label: this.$t('OK') }
-        })
-        return
+        });
+        return;
       }
-      this.callRegister()
+      this.callRegister();
     },
     onSuccess () {
       this.$store.dispatch('notification/spawnNotification', {
         type: 'success',
         message: this.$t('You are logged in!'),
         action1: { label: this.$t('OK') }
-      })
+      });
     },
     onFailure (result) {
       this.$store.dispatch('notification/spawnNotification', {
         type: 'error',
         message: this.$t(result.result),
         action1: { label: this.$t('OK') }
-      })
+      });
     }
   }
-}
+};
 </script>
 
 <style lang="scss" scoped>
-  .modal-header{
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
+.modal-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.modal-close {
+  cursor: pointer;
+}
+.modal-content {
+  @media (max-width: 400px) {
+    padding-left: 20px;
+    padding-right: 20px;
   }
-  .modal-close{
-    cursor: pointer;
-  }
-  .modal-content {
-    @media (max-width: 400px) {
-      padding-left: 20px;
-      padding-right: 20px;
-    }
-  }
+}
 </style>

@@ -119,7 +119,7 @@ export default {
 }
 .orderhr {
   border: none;
-  margin: 0 auto;
+  margin: 10px auto;
   width: 190px;
   height: 2px;
   outline: none;
