@@ -51,23 +51,28 @@ export default {
       navigation: [
         { title: this.$t('My profile'), link: '/my-account' },
         { title: this.$t('My shipping details'), link: '/my-account/shipping-details' },
-        { title: this.$t('My newsletter'), link: '/my-account/newsletter' },
-        { title: this.$t('My orders'), link: '/my-account/orders' },
+        // { title: this.$t('newsletter'), link: '/my-account/newsletter' },
+        { title: this.$t('My orders'), link: '/my-account/orders' }
         // { title: this.$t('My loyalty card'), link: '#' },
         // { title: this.$t('My product reviews'), link: '#' },
-        { title: this.$t('My Recently viewed products'), link: '/my-account/recently-viewed' }
+        // { title: this.$t('My Recently viewed products'), link: '/my-account/recently-viewed' }
       ]
     }
   },
   methods: {
     notify (title) {
-      if (title === 'My loyalty card' || title === 'My product reviews') {
+      if (title === 'My loyalty card' || title === 'My product reviews' || title === 'aaaa') {
         this.$store.dispatch('notification/spawnNotification', {
           type: 'warning',
           message: this.$t('This feature is not implemented yet! Please take a look at https://github.com/DivanteLtd/vue-storefront/issues for our Roadmap!'),
-          action1: { label: this.$t('OK') }
+          action1: { label: 'kai twra?', action: this.$router.push('/') },
+          action2: { label: 'ti kanoyme?', action: this.he() }
+
         })
       }
+    },
+    he () {
+      console.log('hahahah')
     }
   }
 }

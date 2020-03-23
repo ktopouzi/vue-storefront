@@ -17,7 +17,7 @@
               <gmap-autocomplete
                 id="autocomplete"
                 class="p10 cl-black"
-                placeholder="πχ. Γιαννιτσών 90"
+                :placeholder="setPlaceHolder()"
                 :select-first-on-enter="true"
                 @place_changed="setPlace"
                 :options="autocompleteOptions"
@@ -47,11 +47,13 @@ import { isServer, onlineHelper } from '@vue-storefront/core/helpers';
 import NoSSR from 'vue-no-ssr';
 import * as VueGoogleMaps from '../../../../node_modules/vue2-google-maps';
 import { initCacheStorage } from '@vue-storefront/core/lib/storage-manager';
+import {mapGetters} from 'vuex'
 
 export default {
   data () {
     return {
       currentPlace: null,
+      placeholder: '',
       autocompleteOptions: {
         bounds: {
           north: 40.6560448,
@@ -63,8 +65,19 @@ export default {
       }
     };
   },
-  mounted () {},
-  computed: {},
+  mounted () {
+    if (this.getAdd) {
+      console.log(this.getAdd)
+      this.address = this.getAdd.addresses[0].street[0]
+      this.number = this.getAdd.addresses[0].street[1]
+      this.postCode = this.getAdd.addresses[0].postcode
+      this.placeholder = this.address + ' ' + this.number + ' ' + this.postCode
+    }
+    console.log(this.setPlaceHolder())
+  },
+  computed: {
+    ...mapGetters('user', ['getAdd'])
+  },
   metaInfo () {
     return {
       title: this.$route.meta.title || this.$props.title,
@@ -77,6 +90,9 @@ export default {
     'no-ssr': NoSSR
   },
   methods: {
+    setPlaceHolder () {
+      return this.placeholder ? this.placeholder : 'πχ. Γιαννιτσών 90';
+    },
     // receives a place object via the autocomplete component
     async setPlace (place) {
       this.currentPlace = place;

@@ -1,17 +1,17 @@
 <template>
   <div>
-    <header class="modal-header py25 px65 h1 serif weight-700 bg-cl-secondary">
+    <header class="modal-header py25 px65 h1 serif weight-700 bg-cl-black cl-white">
       {{ $t('Reset password') }}
       <i
         slot="close"
-        class="modal-close material-icons cl-bg-tertiary"
+        class="modal-close material-icons cl-bg-white"
         @click="close"
       >
         close
       </i>
     </header>
 
-    <div class="modal-content bg-cl-primary pt30 pb60 px65 cl-secondary">
+    <div class="modal-content bg-cl-primary pt30 pb60 px65 cl-black">
       <template v-if="!passwordSent">
         <form @submit.prevent="sendEmail" novalidate>
           <div class="mb20">
@@ -42,7 +42,7 @@
           <div class="center-xs">
             {{ $t('or') }}
             <a href="#" @click.prevent="switchElem">
-              {{ $t('return to log in') }}
+              Επιστροφή
             </a>
           </div>
         </form>

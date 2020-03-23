@@ -2,7 +2,7 @@
   <modal name="modal-onboard" class="modal-onboard">
     <div class="content relative flex middle-xs">
       <i slot="close" class="modal-close material-icons p15 cl-bg-tertiary" @click="close">close</i>
-      <img src="/assets/logo.svg" :alt="$t(defaultTitle)" class="logo">
+      <img src="/assets/xristos_logo.svg" :alt="$t(defaultTitle)" class="logo">
 
       <div class="copy align-center cl-secondary">
         <p class="h1">

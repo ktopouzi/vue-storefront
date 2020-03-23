@@ -1,6 +1,6 @@
 <template>
   <div>
-    <header class="thank-you-title bg-cl-secondary py35 pl20">
+    <header class="thank-you-title bg-cl-black cl-white py35 pl20">
       <div class="container">
         <breadcrumbs
           :with-homepage="true"
@@ -15,7 +15,7 @@
     <div class="thank-you-content align-justify py40 pl20">
       <div class="container">
         <div class="row">
-          <div class="col-md-6 pl20 pr20">
+          <div class="col-md-12 pl20 pr20">
             <h3 v-if="OnlineOnly">
               {{ $t('Your purchase') }}
             </h3>
@@ -52,7 +52,7 @@
             </p>
             <div id="thank-you-extensions" />
           </div>
-          <div class="col-md-6 bg-cl-secondary thank-you-improvment">
+          <!-- <div class="col-md-6 bg-cl-secondary thank-you-improvment">
             <h3>
               {{ $t('What we can improve?') }}
             </h3>
@@ -72,7 +72,7 @@
                 {{ $t('Give a feedback') }}
               </button-outline>
             </form>
-          </div>
+          </div> -->
         </div>
       </div>
     </div>
@@ -170,7 +170,7 @@ export default {
     this.$store.dispatch('checkout/setThankYouPage', false)
   },
   components: {
-    BaseTextarea,
+    // BaseTextarea,
     Breadcrumbs,
     ButtonOutline
   }

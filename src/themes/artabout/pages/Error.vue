@@ -1,6 +1,6 @@
 <template>
-  <div id="page_not_found">
-    <section class="bg-cl-secondary py35 px20">
+  <div id="page_not_found bg-cl-black cl-white">
+    <section class="bg-cl-black cl-white py35 px20">
       <div class="container">
         <h2>
           {{ $t("Something went wrong ...") }}

@@ -23,7 +23,7 @@
           <div class="col-sm-4 col-xs-4 center-xs">
             <div>
               <a class="no-underline inline-flex" href="/" data-testid="logo">
-                <img width="auto" height="41px" src="/assets/logo.svg" :alt="$t(defaultTitle)">
+                <img width="auto" height="41px" src="/assets/xristos_logo.svg" :alt="$t(defaultTitle)">
               </a>
             </div>
           </div>

@@ -179,11 +179,11 @@ export default {
           name: i18n.t('My shipping details'),
           url: '/my-account/shipping-details'
         },
-        {
-          id: 3,
-          name: i18n.t('My newsletter'),
-          url: '/my-account/newsletter'
-        },
+        // {
+        //   id: 3,
+        //   name: i18n.t('My newsletter'),
+        //   url: '/my-account/newsletter'
+        // },
         {
           id: 4,
           name: i18n.t('My orders'),

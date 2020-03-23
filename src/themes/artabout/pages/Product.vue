@@ -96,14 +96,14 @@
         </section>
       </div>
     </section>
-    <section class="container px15 pt50 pb35 cl-accent details">
+    <section class="container px15 pt50 pb35 cl-white details">
       <h2 class="h3 m0 mb10 serif lh20 details-title">
         {{ $t('Product details') }}
       </h2>
       <div class="h4 details-wrapper" :class="{'details-wrapper--open': detailsOpen}">
         <div class="row between-md m0">
           <div class="col-xs-12 col-sm-6">
-            <div class="lh30 h5" itemprop="description" v-html="getCurrentProduct.description" />
+            <div class="lh30 h5 cl-white" itemprop="description" v-html="getCurrentProduct.description" />
           </div>
           <div class="col-xs-12 col-sm-5">
             <ul class="attributes p0 pt5 m0">

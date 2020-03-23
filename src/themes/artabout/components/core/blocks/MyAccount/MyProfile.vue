@@ -136,7 +136,7 @@
       </template>
 
       <!-- Company information (edit mode) -->
-      <base-checkbox
+      <!-- <base-checkbox
         class="col-xs-12 mb15 mt10"
         id="addCompany"
         v-model="addCompany"
@@ -282,7 +282,7 @@
           :placeholder="$t('Phone Number')"
           v-model.trim="userCompany.phone"
         />
-      </template>
+      </template> -->
 
       <div class="col-xs-12 col-sm-6">
         <button-full
@@ -365,7 +365,7 @@ import Tooltip from 'theme/components/core/Tooltip'
 export default {
   components: {
     BaseCheckbox,
-    BaseSelect,
+    // BaseSelect,
     BaseInput,
     ButtonFull,
     Tooltip

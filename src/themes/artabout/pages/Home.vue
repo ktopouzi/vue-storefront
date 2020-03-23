@@ -43,6 +43,15 @@
         ΠΑΡΑΓΓΕΙΛΤΕ ΤΩΡΑ
       </router-link>
     </section>
+    <div class="test">
+      {{ this.address }}
+    </div>
+    <div class="test">
+      {{ this.number }}
+    </div>
+    <div class="test">
+      {{ this.postCode }}
+    </div>
     <!-- the get isprired method with the tiled gallery -->
     <!-- <section v-if="isOnline" class="container pb60 px15">
       <div class="row center-xs">
@@ -81,7 +90,10 @@ import {RecentlyViewedModule} from '@vue-storefront/core/modules/recently-viewed
 export default {
   data () {
     return {
-      loading: true
+      loading: true,
+      address: '',
+      number: '',
+      postCode: ''
     }
   },
   mixins: [Home],
@@ -94,9 +106,13 @@ export default {
     LazyHydrate
   },
   methods: {
+    getData () {
+      console.log('hello')
+    }
   },
   computed: {
     ...mapGetters('user', ['isLoggedIn']),
+    ...mapGetters('user', ['getAdd']),
     ...mapGetters('homepage', ['getEverythingNewCollection']),
     categories () {
       return this.getCategories
@@ -124,6 +140,12 @@ export default {
   },
   mounted () {
     console.log(this.isLoggedIn)
+    console.log(this.getAdd)
+    if (this.getAdd) {
+      this.address = this.getAdd.addresses[0].street[0]
+      this.number = this.getAdd.addresses[0].street[1]
+      this.postCode = this.getAdd.addresses[0].postcode
+    }
     if (!this.isLoggedIn && localStorage.getItem('redirect')) this.$bus.$emit('modal-show', 'modal-signup')
   },
   watch: {

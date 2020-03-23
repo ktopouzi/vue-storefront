@@ -16,6 +16,9 @@ const getters: GetterTree<UserState, RootState> = {
   getToken (state) {
     return state.token
   },
+  getAdd (state) {
+    return state.current
+  },
   getUserEmail (state, getters) {
     return getters.isLoggedIn ? state.current.email : null
   }

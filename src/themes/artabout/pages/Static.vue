@@ -10,7 +10,7 @@
     </div>
 
     <div class="container pt45 pb70">
-      <div class="row pl20 pt0">
+      <div class="pl20 pt0">
         <div class="col-sm-3">
           <nav class="static-menu serif h4 mb35">
             <ul class="m0 p0">
@@ -22,7 +22,7 @@
             </ul>
           </nav>
         </div>
-        <div class="static-content h4 lh35 col-sm-9">
+        <div class="static-content h4 col-sm-12">
           <component :is="activeComponent" />
         </div>
       </div>
