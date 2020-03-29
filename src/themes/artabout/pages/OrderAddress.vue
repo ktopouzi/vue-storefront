@@ -4,7 +4,10 @@
       <div class="row align-center info-row">
         <div class="col-xs-12 col-sm-12 col-md-12">
           <div class="align-center cl-white pt40">
-            <img src="../assets/marker-pin.png" alt="gooogle map marker pin in red colour">
+            <img
+              src="../assets/marker-pin.png"
+              alt="gooogle map marker pin in red colour"
+            >
             <h2>ΒΑΛΕ ΤΗ ΔΙΕΥΘΥΝΣΗ ΣΟΥ</h2>
             <hr class="brdr-none no-outline bg-cl-xred orderhr">
           </div>
@@ -13,6 +16,14 @@
       <div class="row align-center pt50">
         <div class="col-xs-12 col-sm-12 col-md-12">
           <div class="align-center cl-white">
+            <select name="test" id="test">
+              <option value="test">
+                test
+              </option>
+              <option value="test">
+                test2
+              </option>
+            </select>
             <no-ssr>
               <gmap-autocomplete
                 id="autocomplete"
@@ -24,7 +35,12 @@
               />
             </no-ssr>
           </div>
-          <img class="pt50" width="200px" src="../assets/order-xristos-logo.png" alt="xristos logo">
+          <img
+            class="pt50"
+            width="200px"
+            src="../assets/order-xristos-logo.png"
+            alt="xristos logo"
+          >
         </div>
       </div>
       <div class="row align-center pt50">
@@ -47,7 +63,7 @@ import { isServer, onlineHelper } from '@vue-storefront/core/helpers';
 import NoSSR from 'vue-no-ssr';
 import * as VueGoogleMaps from '../../../../node_modules/vue2-google-maps';
 import { initCacheStorage } from '@vue-storefront/core/lib/storage-manager';
-import {mapGetters} from 'vuex'
+import { mapGetters } from 'vuex';
 
 export default {
   data () {
@@ -67,13 +83,13 @@ export default {
   },
   mounted () {
     if (this.getAdd) {
-      console.log(this.getAdd)
-      this.address = this.getAdd.addresses[0].street[0]
-      this.number = this.getAdd.addresses[0].street[1]
-      this.postCode = this.getAdd.addresses[0].postcode
-      this.placeholder = this.address + ' ' + this.number + ' ' + this.postCode
+      console.log(this.getAdd);
+      this.address = this.getAdd.addresses[0].street[0];
+      this.number = this.getAdd.addresses[0].street[1];
+      this.postCode = this.getAdd.addresses[0].postcode;
+      this.placeholder = this.address + ' ' + this.number + ' ' + this.postCode;
     }
-    console.log(this.setPlaceHolder())
+    console.log(this.setPlaceHolder());
   },
   computed: {
     ...mapGetters('user', ['getAdd'])
@@ -114,11 +130,11 @@ export default {
 #autocomplete {
   width: 90%;
   max-width: 420px;
-  font-family: "Gotham Greek Book";
+  font-family: 'Gotham Greek Book';
 }
 #order-now {
   height: 100%;
-  background: url("/assets/wood_bg.jpg");
+  background: url('/assets/wood_bg.jpg');
   background-position-y: center;
   padding-bottom: 90px;
 
@@ -129,7 +145,7 @@ export default {
 
 .info-row {
   h2 {
-    font-family: "Gotham Greek Book";
+    font-family: 'Gotham Greek Book';
     font-weight: 100;
   }
 }

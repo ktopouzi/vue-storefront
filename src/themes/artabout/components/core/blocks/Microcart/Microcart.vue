@@ -57,7 +57,7 @@
       </h3>
       <div v-for="(segment, index) in totals" :key="index" class="row py20" v-if="segment.code !== 'grand_total'">
         <div class="col-xs">
-          {{ segment.title }}
+          {{ $t(segment.title) }}
           <button v-if="appliedCoupon && segment.code === 'discount'" type="button" class="p0 brdr-none bg-cl-transparent close delete-button ml10" @click="clearCoupon">
             <i class="material-icons cl-accent">
               close
@@ -91,7 +91,7 @@
 
       <div class="row pt30 pb20 weight-700 middle-xs" v-for="(segment, index) in totals" :key="index" v-if="segment.code === 'grand_total'">
         <div class="col-xs h4 total-price-label">
-          {{ segment.title }}
+          {{ $t(segment.title) }}
         </div>
         <div class="col-xs align-right h2 total-price-value">
           {{ segment.value | price(storeView) }}

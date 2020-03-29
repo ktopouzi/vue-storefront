@@ -2,7 +2,7 @@
   <div id="checkout">
     <div class="container">
       <div class="row" v-show="!isThankYouPage">
-        <div class="col-sm-7 col-xs-12 pb70">
+        <div class="col-sm-12 pb70">
           <div class="checkout-title py5 px20">
             <h1>
               {{ $t('Checkout') }}
@@ -18,7 +18,7 @@
           <order-review class="line relative" :is-active="activeSection.orderReview" />
           <div id="custom-steps" />
         </div>
-        <div class="hidden-xs col-sm-5 bg-cl-secondary">
+        <div class="col-sm-12 bg-cl-secondary">
           <cart-summary />
         </div>
       </div>

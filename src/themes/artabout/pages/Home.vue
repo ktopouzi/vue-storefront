@@ -149,7 +149,7 @@ export default {
     if (!this.isLoggedIn && localStorage.getItem('redirect')) this.$bus.$emit('modal-show', 'modal-signup')
   },
   watch: {
-    isLoggedIn () {
+    isLoggedIns () {
       const redirectObj = localStorage.getItem('redirect')
       if (redirectObj) this.$router.push(redirectObj)
       localStorage.removeItem('redirect')

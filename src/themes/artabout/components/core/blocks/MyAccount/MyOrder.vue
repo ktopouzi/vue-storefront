@@ -84,12 +84,12 @@
               </td>
               <td>{{ order.shipping_amount | price(storeView) }}</td>
             </tr>
-            <tr>
+            <!-- <tr>
               <td colspan="5" class="align-right">
                 {{ $t('Tax') }}
               </td>
               <td>{{ order.tax_amount + order.discount_tax_compensation_amount | price(storeView) }}</td>
-            </tr>
+            </tr> -->
             <tr v-if="order.discount_amount">
               <td colspan="5" class="align-right">
                 {{ $t('Discount') }}
