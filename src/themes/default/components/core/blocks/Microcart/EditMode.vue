@@ -30,11 +30,10 @@ export default {
         color: { id: color.id, attribute_code: color.type, label: color.label }
       }
       this.product.qty = this.getEditingQty
-      this.product.checksum = null
       this.$store.dispatch('cart/configureItem', { product: this.product, configuration })
     },
     getEditedProduct (filter = {}) {
-      const selectedFilters = {...this.getSelectedOptions, [filter.type]: filter}
+      const selectedFilters = { ...this.getSelectedOptions, [filter.type]: filter }
       const sizeId = get(selectedFilters, 'size.id', '')
       const colorId = get(selectedFilters, 'color.id', '')
       const children = this.product.configurable_children || []

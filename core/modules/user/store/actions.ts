@@ -126,7 +126,7 @@ const actions: ActionTree<UserState, RootState> = {
 
     if (!resolvedFromCache && resp.resultCode === 200) {
       EventBus.$emit('user-after-loggedin', resp.result)
-      dispatch('cart/authorize', {}, { root: true })
+      await dispatch('cart/authorize', {}, { root: true })
       return resp
     }
   },
@@ -213,7 +213,7 @@ const actions: ActionTree<UserState, RootState> = {
     commit(types.USER_GROUP_CHANGED, null)
     commit(types.USER_INFO_LOADED, null)
     dispatch('wishlist/clear', null, { root: true })
-    dispatch('compare/clear', null, {root: true})
+    dispatch('compare/clear', null, { root: true })
     dispatch('checkout/savePersonalDetails', {}, { root: true })
     dispatch('checkout/saveShippingDetails', {}, { root: true })
     dispatch('checkout/savePaymentDetails', {}, { root: true })

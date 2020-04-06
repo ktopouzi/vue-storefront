@@ -45,7 +45,6 @@
 
 <script>
 import config from 'config'
-import { Carousel, Slide } from 'vue-carousel'
 import ProductImage from './ProductImage'
 import ProductVideo from './ProductVideo'
 import reduce from 'lodash-es/reduce'
@@ -54,8 +53,8 @@ import map from 'lodash-es/map'
 export default {
   name: 'ProductGalleryCarousel',
   components: {
-    Carousel,
-    Slide,
+    'Carousel': () => import('vue-carousel').then(Slider => Slider.Carousel),
+    'Slide': () => import('vue-carousel').then(Slider => Slider.Slide),
     ProductImage,
     ProductVideo
   },
@@ -91,7 +90,7 @@ export default {
     this.selectVariant()
 
     if (this.configuration.color) {
-      const {color} = this.configuration
+      const { color } = this.configuration
       this.currentColor = color.id
     }
 
@@ -128,7 +127,7 @@ export default {
       this.$emit('toggle', currentSlide)
     },
     switchCarouselSpeed () {
-      const {color} = this.configuration
+      const { color } = this.configuration
       if (color && this.currentColor !== color.id) {
         this.currentColor = color.id
         this.carouselTransitionSpeed = 0

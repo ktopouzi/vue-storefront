@@ -1,9 +1,9 @@
 import map from 'lodash-es/map'
-import { prepareElasticsearchQueryBody } from './elasticsearchQuery'
+import { prepareElasticsearchQueryBody } from '@vue-storefront/core/lib/search/adapter/api/elasticsearchQuery'
 import fetch from 'isomorphic-fetch'
 import { slugify, processURLAddress } from '@vue-storefront/core/helpers'
 import queryString from 'query-string'
-import { currentStoreView, prepareStoreView } from '../../../multistore'
+import { currentStoreView, prepareStoreView } from '@vue-storefront/core/lib/multistore'
 import SearchQuery from '@vue-storefront/core/lib/search/searchQuery'
 import HttpQuery from '@vue-storefront/core/types/search/HttpQuery'
 import { SearchResponse } from '@vue-storefront/core/types/search/SearchResponse'
@@ -102,8 +102,9 @@ export class SearchAdapter {
         suggestions: resp.suggest
       }
     } else {
-      if (resp.error) {
-        throw new Error(JSON.stringify(resp.error))
+      const isErrorObject = (resp && resp.code) >= 400 ? resp : null
+      if (resp.error || isErrorObject) {
+        throw new Error(JSON.stringify(resp.error || resp))
       } else {
         throw new Error('Unknown error with elasticsearch result in resultProcessor for entity type \'' + type + '\'')
       }
